@@ -12,6 +12,7 @@
         ],
         "index": "index.html",
         "main": "main.ts",
+        "deployUrl": "https://wqlchenxiang.github.io",
         "polyfills": "polyfills.ts",
         "test": "test.ts",
         "tsconfig": "tsconfig.app.json",
