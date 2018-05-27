@@ -1,7 +1,7 @@
 language: typescript
 # # nodejs版本
-# node_js: 
-#     - '6'
+node_js: 
+    - stable
 
 # Travis-CI Caching
 cache:
@@ -19,13 +19,13 @@ before_script:
 script:
   - npm run build
 
-after_script:
+after_success:
   # - cd ./dist
   # - git init
   # - git config user.name "wqlchenxiang"
   # - git config user.email "mylovewang2013"
   - git add .
-  - git commit -m "Update bundles"
+  - git commit -m "update bundles"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
   # git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
 # # E: Build LifeCycle
@@ -36,6 +36,4 @@ branches:
     - master
 env:
  global:
-   # 我将其添加到了travis-ci的环境变量中
-   - GH_REF: github.com/yimogit/metools.git 
-   - GH_TOKEN: 9b5c3efcca7377103208d67e67087172f8a70802
+   - GH_REF: github.com/wqlchenxiang/hello-world.git
