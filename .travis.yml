@@ -10,12 +10,13 @@ before_script:
 script:
 - npm run build
 after_success:
+- cd ./dist
 - git init
 - git config user.name "wqlchenxiang"
 - git config user.email "m18510176015@163.com"
 - git add .
 - git commit -m "update bundles"
-- git push --force "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+- git push --force "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
 branches:
   only:
   - master
