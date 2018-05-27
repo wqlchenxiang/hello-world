@@ -1,39 +1,27 @@
 language: typescript
-# # nodejs版本
-node_js: 
-    - stable
-
-# Travis-CI Caching
+node_js:
+- stable
 cache:
   directories:
-    - node_modules
-
-
-# S: Build Lifecycle
+  - node_modules
 install:
-  - npm install
-
-before_script:
-
-# 无其他依赖项所以执行npm run build 构建就行了
+- npm install
+before_script: 
 script:
-  - npm run build
-
+- npm run build
 after_success:
-  # - cd ./dist
-  - git init
-  - git config user.name "wqlchenxiang"
-  - git config user.email "m18510176015@163.com"
-  - git add .
-  - git commit -m "update bundles"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-  # git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-# # E: Build LifeCycle
-
-#指定分支，只有指定的分支提交时才会运行脚本
+- git init
+- git config user.name "wqlchenxiang"
+- git config user.email "m18510176015@163.com"
+- git add .
+- git commit -m "update bundles"
+- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
 branches:
   only:
-    - master
+  - master
 env:
- global:
-   - GH_REF: github.com/wqlchenxiang/hello-world.git
+  global:
+  - GH_REF: github.com/wqlchenxiang/hello-world.git
+deply:
+  github-token:
+    secure: IRMyyiCzraqp2eL9aHfQt8CzjjABhhYP78RvtH5nK+j6hWXIZ8Jyj0vAtZIzjOPy2xdWYHAtTnkE06r4yJ2a6CtBBKdu4VfgpnV4DGADXJng0X8NqXS8W+PCsBbaWZfnQO3iCbtAck31dIshUjgS6NoDAaL38ozBsS5HnJgC14ysMsvOcwTmXytj/Ey5oDiPAF4er+EcE+BupefejY9++PpLuLCpAwZ1D9oEsSoBybmnlHuyPXFvry2SSG5i9hMBFrqnLh2iZzhPi/DKMDTz50F0mokhrDtGEQje3QuVDzoV3ty2oorngHhX3wXQadfOiRc6tf/LzlOg1dU4h0N9bSWuSxbS4jVkeoD8OcuuGbfDNk9hJUfrM8KH8HAEX/H0SdVeyPMXXE/sW23QYXAI4gQw02o8jCULwSiLqch5Llsg5WXQiPkQxJvKiNG0jOWGEy5eG1XqcLxIUYGs55R8q+2auKNmRIj0jzsubTyyVFng41uk/aAKWqKyHSc6EpdK5TdhQEOAnyizDXvU/HV3EOMQQ+NILyO3NCsSFfz9cbA+W1mlbrBFhn+6Q/tVjoBLbTbOL73Dmj9pQOSaOW+soLeJQXDmhLvkFVN+HimxXsMytWZlbRhVMrJcG79DOFuHIyVshl9zoZ2h9q2xqxIaZMHuKCVrpGAWWJEpSHpcdlA=
