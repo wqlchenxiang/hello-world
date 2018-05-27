@@ -15,13 +15,13 @@ after_success:
 - git config user.email "m18510176015@163.com"
 - git add .
 - git commit -m "update bundles"
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+- git push --force "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
 branches:
   only:
   - master
 env:
   global:
   - GH_REF: github.com/wqlchenxiang/hello-world.git
-deply:
-  github-token:
-    secure: PmzZO4MZyZpBsAFyA5dXdGVPn/GIzb7sb0U9MlvTCCxbwwkIYxHybxVkZ+VrjXruRjFjAKicQbIBhH382HaaEiJqxOQ+8GsOU74IEzVLkRNJncgIPFq4ie1/234mMPKi3jyFgDxsPk5TbjHGHoj5xmQxp6ewFAU/PXrnWkLR1V7ZE4DeTWJrF9DsV5ShLsticSOVSnY3bVOGo5uV+0vhrZyxTOO7Sw5AGCwF5XEaJXqERyHcEqKiEdcrHkZYnufzBbQ0u3nNBgzKpqFZgS9XSOq5VkP0w0JGX+ndGFUc8vWyZSyChdp+RjkZ169Iu6obS8AJdSS/mIbKRlmxY4IQGFs+d7cLNPY5fkIQVTSOQZ4GGspORW/xo8YzIGkdrvmdUX6YCkLpSDl/ls62Wk5/JA63HajBCmaV/frjNjX2lQ3YHshD1GPUjTMOpVmzWVXzouKbajjQmqfwlQ531XhEBnEhTEK+b+JjHETUeID63qStqm6zbOR9Ki0DaGEdw6FnSnvFPCb6dl36CYRKQOfT37QNIiDEamJ/iCG3mlME3Gfz1H0ikoWNwO0BW3LBvdPgV67iYhVFaV+1ZUij2nO+YfRZe/RUah1LVJC14zh6HXR4TmDC7fBIUQeeorVeI1AEumLcpYQvQ16Kq75uKajfKLD3/qhXuJq1uE1ieDXD1u4=
+# deply:
+#   github-token:
+   
