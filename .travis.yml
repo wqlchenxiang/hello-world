@@ -20,10 +20,10 @@ script:
   - npm run build
 
 after_script:
-  - cd ./dist
-  - git init
-  - git config user.name "wqlchenxiang"
-  - git config user.email "mylovewang2013"
+  # - cd ./dist
+  # - git init
+  # - git config user.name "wqlchenxiang"
+  # - git config user.email "mylovewang2013"
   - git add .
   - git commit -m "Update tools"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
